@@ -1,2 +1,2 @@
-# Otomata
+# UNIVERSITY
 Sources and Homeworks
