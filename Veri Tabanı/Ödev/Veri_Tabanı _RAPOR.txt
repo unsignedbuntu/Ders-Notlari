@@ -1,0 +1,46 @@
+DOCTOR, NURSE, PATIENT Tabloları
+
+Bu tablolar temel sağlık sistemini temsil eder. Her biri kendi alanlarıyla birlikte doktor, hemşire ve hasta bilgilerini içerir.
+
+TREATMENT Tablosu
+
+Doktorların ve hemşirelerin hastalara uyguladığı tedavilerin bilgilerini içerir.
+Doktor_ID ve Nurse_ID alanları, doktor ve hemşire tablolarına referans verir.
+Prescription_ID, hastanın reçete numarasını belirtir.
+
+PRESCRIPTION Tablosu
+
+Hastalara verilen reçetelerin bilgilerini içerir.
+Prescription_ID, benzersiz bir reçete numarasını belirtir.
+
+HOSPITAL Tablosu
+
+Hastane bilgilerini içerir.
+Hospital_ID, benzersiz bir hastane kimliğini belirtir.
+
+MEDICINE Tablosu
+
+Doktorların ve hemşirelerin hastalara verdiği ilaçların bilgilerini içerir.
+Medicine_ID, benzersiz bir ilaç kimliğini belirtir.
+Doctor_ID ve Nurse_ID alanları, doktor ve hemşire tablolarına referans verir.
+
+GetNorolojiPatients Stored Procedure
+
+Noroloji bölümündeki doktorların tedavi ettiği hastaların listesini döndürür.
+Bu sorgu, PATIENT ve TREATMENT tablolarını kullanarak Noroloji doktorlarının tedavi ettiği hastaların isim ve soyisim bilgilerini getirir.
+
+Get_TotalEmployees Fonksiyonu
+
+Hastanelerde çalışan toplam personel sayısını döndürür.
+Bu fonksiyon, HOSPITAL tablosunu kullanarak toplam hastane personel sayısını hesaplar ve döndürür.
+
+Hosiptal_InsertTrigger Triggerı
+
+Tetikleyici Türü: AFTER INSERT
+
+Tetikleyici, HOSPITAL tablosuna bir satır ekledikten sonra çalışır. Bu, yeni bir kayıt ekledikten sonra tetikleyicinin yürütüleceği anlamına gelir.
+
+Tetikleyici İşlevi:
+
+Tetikleyici içindeki SQL ifadesi, HOSPITAL tablosuna bir satır eklediğinizde yapılacak işlemi tanımlar.
+Bu tetikleyici, HospitalLog adlı bir başka tabloya "New hospital record added" mesajını ve eklenme tarihini içeren bir log kaydı ekler.
