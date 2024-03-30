@@ -1,0 +1,1 @@
+Derivation tree is a graphical representation for the derivation of the given production rules of the context free grammar (CFG). It is a way to show how the derivation can be done to obtain some string from a given set of production rules. It is also called as the Parse tree.
